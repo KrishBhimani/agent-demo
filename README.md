@@ -1,14 +1,31 @@
 # agent-demo
 
 A tiny JavaScript utility library used to demo an autonomous fork-and-fix agent.
-It ships with **two deliberate bugs**, each described in an open issue. Run the test
-to see them fail:
-
-```bash
-node test.mjs
-```
 
 - `src/math.js` — `sumTo(n)` (sum of 1..n)
 - `src/text.js` — `capitalize(s)`
+- `src/slug.js` — `slugify(input, options)`
 
-See the open issues for the bug reports.
+## Slugify
+
+Use `slugify` to turn text into a URL-friendly slug. It removes Unicode accents,
+lowercases text, and collapses separators into hyphens. Pass `maxLength` to limit
+the result without cutting off a word when a hyphen boundary is available.
+
+```js
+import { slugify } from "./src/slug.js";
+
+slugify("Crème Brûlée");
+// "creme-brulee"
+
+slugify("hello wonderful world", { maxLength: 12 });
+// "hello"
+```
+
+## Tests
+
+Run the full test suite with:
+
+```bash
+npm test
+```
