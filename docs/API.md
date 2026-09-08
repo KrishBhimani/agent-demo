@@ -1,7 +1,8 @@
 # API Reference
 
 `agent-demo` provides small, dependency-free JavaScript utilities. Each utility
-is exported from its source module and can be imported directly.
+is exported from its source module and can be imported directly. Run the
+following examples from the repository root.
 
 ## `sumTo(n)`
 
