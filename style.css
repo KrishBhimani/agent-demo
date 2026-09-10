@@ -1,0 +1,215 @@
+:root {
+  color-scheme: light;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #243b37;
+  background: #f2f6f3;
+  line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  min-height: 44px;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+:focus-visible {
+  outline: 3px solid #967022;
+  outline-offset: 3px;
+}
+
+.todo-app {
+  width: min(100% - 32px, 680px);
+  margin: 72px auto;
+}
+
+.eyebrow {
+  color: #45645a;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 16px 0 8px;
+  font-size: clamp(2rem, 6vw, 3rem);
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+}
+
+.intro,
+.storage-note {
+  color: #53665f;
+}
+
+.task-panel {
+  margin-top: 32px;
+  padding: 32px;
+  border: 1px solid #dce5de;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 12px 40px #243b3708;
+}
+
+h2 {
+  margin: 0 0 24px;
+  font-size: 1.25rem;
+}
+
+label[for="task-input"] {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.input-row {
+  display: flex;
+  gap: 10px;
+}
+
+#task-input {
+  width: 100%;
+  min-width: 0;
+  padding: 12px 14px;
+  border: 1px solid #a7bbb0;
+  border-radius: 8px;
+  color: inherit;
+  background: #fff;
+}
+
+#task-input::placeholder {
+  color: #66766f;
+}
+
+.add-button {
+  flex-shrink: 0;
+  padding: 12px 18px;
+  border: 0;
+  border-radius: 8px;
+  color: #fff;
+  background: #27634e;
+  font-weight: 600;
+}
+
+.add-button:hover {
+  background: #1a4c3a;
+}
+
+.list-summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0 12px;
+  margin-top: 24px;
+  font-size: 0.85rem;
+}
+
+.text-button,
+.delete-button {
+  padding: 8px;
+  border: 0;
+  border-radius: 6px;
+  color: #45645a;
+  background: transparent;
+}
+
+.text-button:hover:not(:disabled),
+.delete-button:hover {
+  background: #edf3ef;
+}
+
+#task-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-top: 1px solid #e4eae6;
+}
+
+.task-label {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+}
+
+.task-label input {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  accent-color: #27634e;
+}
+
+.completed .task-text {
+  color: #66766f;
+  text-decoration: line-through;
+}
+
+.delete-button {
+  flex-shrink: 0;
+  color: #974139;
+  font-size: 0.85rem;
+}
+
+#empty-state {
+  margin: 0;
+  padding: 32px 12px;
+  border-top: 1px solid #e4eae6;
+  color: #66766f;
+  text-align: center;
+}
+
+.storage-note,
+#storage-status {
+  margin: 20px 0 0;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+#storage-status {
+  color: #974139;
+}
+
+@media (max-width: 480px) {
+  .todo-app {
+    margin: 32px auto;
+  }
+
+  .task-panel {
+    padding: 20px;
+  }
+
+  .input-row {
+    flex-direction: column;
+  }
+}
